@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="container">
+    <h1><a href="/products">Market</a></h1>
+    
+    {{#if user }}
+      <div>
+        <button onClick="location.href='/cart'" class="btn btn-secondary">
+          <i class="bi bi-cart"></i>
+          Cart
+        </button>
+        <button onclick="location.href='/api/users/logout-front'" class="btn btn-secondary">
+          <i class="bi bi-box-arrow-left"></i>
+          Logout
+        </button>
+      </div>
+    {{else}}
+      <button onclick="location.href='/login'" class="btn btn-secondary">
+        <i class="bi bi-box-arrow-right"></i>
+        Login
+      </button>
+    {{/if}}
+  </div>
+</header>
