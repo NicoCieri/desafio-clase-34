@@ -3,6 +3,8 @@
 Para correr el proyecto es necesario crear el archivo `.env` y setear las credenciales de Mongo Atlas `DB_USER` y `DB_PASSWORD`. También setear `PRIVATE_KEY` con `"1234"`.
 Para poder enviar los emails es necesario setear las variables `EMAIL` y `EMAIL_PASSWORD` con las credenciales de una cuenta de gmail.
 
+Para ejecutar el proyecto en modo de desarrollo, se debe setear la variable `NODE_ENV` con el valor `DEV`.
+
 ## Comandos
 
 - `npm start`: Levanta el proyecto en el puerto 8080.
