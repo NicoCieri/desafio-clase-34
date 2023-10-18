@@ -2,6 +2,7 @@ import MongoDao from "./mongo.dao.js";
 import { createHash, isValidPassword } from "../../../utils/utils.js";
 import { UserModel } from "./models/user.model.js";
 import CartDao from "./cart.dao.js";
+import logger from "../../../utils/logger.js";
 
 const cartDao = new CartDao();
 
@@ -57,7 +58,7 @@ export default class UserDao extends MongoDao {
       const userExists = await UserModel.findOne({ email });
       return userExists ?? false;
     } catch (error) {
-      console.log(error);
+      logger.error(error);
     }
   }
 }

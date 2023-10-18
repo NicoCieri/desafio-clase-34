@@ -17,7 +17,6 @@ export default class Services {
       const item = await this.dao.getById(id);
       return item ?? false;
     } catch (error) {
-      console.log("getById service");
       throw new Error(error.message);
     }
   };

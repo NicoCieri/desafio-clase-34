@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/errorHandler.js";
 import { __dirname } from "./utils/utils.js";
 import routes from "./routes/index.js";
+import logger from "./utils/logger.js";
 import "./passport/jwt-strategy.js";
 
 const app = express();
@@ -29,5 +30,5 @@ app.use("/", routes);
 app.use(errorMiddleware);
 
 app.listen(PORT, () => {
-  console.log(`Server ok en puerto ${PORT}`);
+  logger.debug(`Server ok en puerto ${PORT}`);
 });

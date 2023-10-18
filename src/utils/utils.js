@@ -2,6 +2,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { hashSync, compareSync, genSaltSync } from "bcrypt";
 import { faker } from "@faker-js/faker";
+import logger from "./logger.js";
 
 faker.locale = "es";
 
@@ -95,9 +96,8 @@ export const generateProducts = (count = 100) =>
   Array.from({ length: count }, generateProduct);
 
 export const throwError = (status = 500, message) => {
-  console.log("throwError", status, message);
   const error = new Error(message);
   error.status = status;
-  console.log("throwError", error.status);
+  logger.error(message);
   throw error;
 };
